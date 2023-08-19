@@ -118,4 +118,69 @@ function occ(str){
 
 console.log(occ("yashraj"));
 
+//LOOP QUESTIONS
+//===================
+
+//  Que.11 Loop an array and add all numbers of it
+var arr = [1,2,3,4,5];
+var sum = 0;
+
+arr.forEach(function(elem){
+    sum = sum + elem;
+})
+
+console.log("Sum of array elements is: "+sum);
+
+//Que.12 In an array of numbers and strings, only add those members
+//which are not strings
+var arr1 = [1,2,"34",34,"12","24",3,5,"sduif"];
+var sum1 = 0;
+
+arr1.forEach(function(elem){
+    if(typeof elem == 'number'){
+        sum1 = sum1 + elem;
+    }
+})
+
+console.log(sum1);
+
+//Que.13 Loop an array of objects and remove all objects which don`t have 
+//gender`s value male
+var array1 = [
+    { name: 'shraddha', gender: 'female' },
+    { name: 'Yashraj', gender: 'male' },
+    { name: 'sanket', gender: 'male' },
+    { name: 'ankita', gender: 'female' },
+    { name: 'muskan', gender: 'female' }
+]
+
+//FIRST WAY
+// var newArray = array1.filter(function (elem){
+//     return elem.gender === 'male';
+// })
+
+// console.log(newArray);
+
+//SECOND WAY
+//pehle non-male bande gino
+var count = 0;
+array1.forEach(function(elem){
+    if(elem.gender !== 'male'){
+        count++;
+    }
+})
+//phir ek non-male bande ko hatane ka code karo
+//aur fir us code ko total non-male times chala do
+for (var i=1; i<=count; i++){
+    for(var j=0; j<array1.length; j++){
+        if(array1[j].gender !== "male"){
+            array1.splice(j,1);
+        }
+    }
+}
+
+console.log(array1);
+
+
+
 
